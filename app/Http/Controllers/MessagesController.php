@@ -50,22 +50,20 @@ class MessagesController extends Controller
      */
     public function index($id = null)
     {
-        if(auth()->check()){
-        // get current route
-        $route = (in_array(\Request::route()->getName(), ['user', config('chatify.path')]))
-            ? 'user'
-            : \Request::route()->getName();
+        if (auth()->check()) {
+            // get current route
+            $route = (in_array(\Request::route()->getName(), ['user', config('chatify.path')]))
+                ? 'user'
+                : \Request::route()->getName();
 
-        // prepare id
-        return view('Chatify::pages.app', [
-            'id' => ($id == null) ? 0 : $route . '_' . $id,
-            'route' => $route,
-            'messengerColor' => Auth::user()->messenger_color,
-            'dark_mode' => Auth::user()->dark_mode < 1 ? 'light' : 'dark',
-        ]);
-        }
-
-        else{
+            // prepare id
+            return view('Chatify::pages.app', [
+                'id' => ($id == null) ? 0 : $route . '_' . $id,
+                'route' => $route,
+                'messengerColor' => Auth::user()->messenger_color,
+                'dark_mode' => Auth::user()->dark_mode < 1 ? 'light' : 'dark',
+            ]);
+        } else {
             return redirect()->route('login');
         }
     }
