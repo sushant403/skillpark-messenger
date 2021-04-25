@@ -5,7 +5,8 @@
         {{-- Header and search bar --}}
         <div class="m-header">
             <nav>
-                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">MESSAGES</span> </a>
+                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">Skillpark Inc.
+                        Messenger</span> </a>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#"><i class="fas fa-cog settings-btn"></i></a>
@@ -16,44 +17,42 @@
             <input type="text" class="messenger-search" placeholder="Search" />
             {{-- Tabs --}}
             <div class="messenger-listView-tabs">
-                <a href="#" @if($route == 'user') class="active-tab" @endif data-view="users">
-                    <span class="far fa-user"></span> People</a>
-                <a href="#" @if($route == 'group') class="active-tab" @endif data-view="groups">
-                    <span class="fas fa-users"></span> Groups</a>
+                <a href="#" @if($route=='home' ) class="active-tab" @endif data-view="users">
+                    <span class="far fa-user"></span> Connected Accounts</a>
             </div>
         </div>
         {{-- tabs and lists --}}
         <div class="m-body">
-           {{-- Lists [Users/Group] --}}
-           {{-- ---------------- [ User Tab ] ---------------- --}}
-           <div class="@if($route == 'user') show @endif messenger-tab app-scroll" data-view="users">
+            {{-- Lists [Users/Group] --}}
+            {{-- ---------------- [ User Tab ] ---------------- --}}
+            <div class="@if($route == 'home') show @endif messenger-tab app-scroll" data-view="users">
 
-               {{-- Favorites --}}
-               <p class="messenger-title">Favorites</p>
+                {{-- Favorites --}}
+                <p class="messenger-title">Favorites</p>
                 <div class="messenger-favorites app-scroll-thin"></div>
 
-               {{-- Saved Messages --}}
-               {!! view('Chatify::layouts.listItem', ['get' => 'saved','id' => $id])->render() !!}
+                {{-- Saved Messages --}}
+                {!! view('Chatify::layouts.listItem', ['get' => 'saved','id' => $id])->render() !!}
 
-               {{-- Contact --}}
-               <div class="listOfContacts" style="width: 100%;height: calc(100% - 200px);"></div>
-               
-           </div>
+                {{-- Contact --}}
+                <div class="listOfContacts" style="width: 100%;height: calc(100% - 200px);"></div>
 
-           {{-- ---------------- [ Group Tab ] ---------------- --}}
-           <div class="@if($route == 'group') show @endif messenger-tab app-scroll" data-view="groups">
+            </div>
+
+            {{-- ---------------- [ Group Tab ] ---------------- --}}
+            <div class="@if($route == 'group') show @endif messenger-tab app-scroll" data-view="groups">
                 {{-- items --}}
                 <p style="text-align: center;color:grey;">Soon will be available</p>
-             </div>
+            </div>
 
-             {{-- ---------------- [ Search Tab ] ---------------- --}}
-           <div class="messenger-tab app-scroll" data-view="search">
+            {{-- ---------------- [ Search Tab ] ---------------- --}}
+            <div class="messenger-tab app-scroll" data-view="search">
                 {{-- items --}}
                 <p class="messenger-title">Search</p>
                 <div class="search-records">
                     <p class="message-hint"><span>Type to search..</span></p>
                 </div>
-             </div>
+            </div>
         </div>
     </div>
 
@@ -65,12 +64,16 @@
                 {{-- header back button, avatar and user name --}}
                 <div style="display: inline-flex;">
                     <a href="#" class="show-listView"><i class="fas fa-arrow-left"></i></a>
-                    <div class="avatar av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;">
+                    <div class="avatar av-s header-avatar"
+                        style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;">
                     </div>
                     <a href="#" class="user-name">{{ config('chatify.name') }}</a>
                 </div>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
+                    <a class="mr-2" href="javascript:();"
+                        onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                        Logout</a>
                     <a href="#" class="add-to-favorite"><i class="fas fa-star"></i></a>
                     <a href="{{ route('home') }}"><i class="fas fa-home"></i></a>
                     <a href="#" class="show-infoSide"><i class="fas fa-info-circle"></i></a>
@@ -86,7 +89,8 @@
         {{-- Messaging area --}}
         <div class="m-body app-scroll">
             <div class="messages">
-                <p class="message-hint" style="margin-top: calc(30% - 126.2px);"><span>Please select a chat to start messaging</span></p>
+                <p class="message-hint" style="margin-top: calc(30% - 126.2px);"><span>Please select a chat to start
+                        messaging</span></p>
             </div>
             {{-- Typing indicator --}}
             <div class="typing-indicator">
@@ -113,6 +117,8 @@
         {!! view('Chatify::layouts.info')->render() !!}
     </div>
 </div>
-
+<form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+    {{ csrf_field() }}
+</form>
 @include('Chatify::layouts.modals')
 @include('Chatify::layouts.footerLinks')
