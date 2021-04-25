@@ -1,83 +1,172 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    {{ __('Login') }}
-                    <br>
-                    Please use your Skillpark Inc. Login Credientials to Access the Messaging Service.
+<!-- ========== MAIN ========== -->
+<main id="content" role="main">
+    <!-- Form -->
+    <div class="d-flex align-items-center position-relative vh-lg-100">
+        <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center bg-dark vh-lg-100 px-0"
+            style="background-image: url(/images/svg/components/abstract-shapes-20.svg);">
+            <div class="w-100 p-5">
+                <!-- SVG Quote -->
+                <figure class="text-center mb-5 mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="40px" height="40px" viewBox="0 0 8 8" style="enable-background:new 0 0 8 8;"
+                        xml:space="preserve">
+                        <path fill="#fff" d="M3,1.3C2,1.7,1.2,2.7,1.2,3.6c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5
+            C1.4,6.9,1,6.6,0.7,6.1C0.4,5.6,0.3,4.9,0.3,4.5c0-1.6,0.8-2.9,2.5-3.7L3,1.3z M7.1,1.3c-1,0.4-1.8,1.4-1.8,2.3
+            c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5c-0.7,0-1.1-0.3-1.4-0.8
+            C4.4,5.6,4.4,4.9,4.4,4.5c0-1.6,0.8-2.9,2.5-3.7L7.1,1.3z" />
+                    </svg>
+                </figure>
+                <!-- End SVG Quote -->
+
+                <!-- Testimonials Carousel Main -->
+                <div id="testimonialsNavMain" class="js-slick-carousel slick mb-4" data-hs-slick-carousel-options='{
+             "autoplay": true,
+             "autoplaySpeed": 5000,
+             "fade": true,
+             "infinite": true,
+             "asNavFor": "#testimonialsNavPagination"
+           }'>
+                    <div class="js-slide">
+                        <!-- Testimonials -->
+                        <div class="w-md-80 w-lg-60 text-center mx-auto">
+                            <blockquote class="h3 text-white font-weight-normal mb-4">The template is really nice
+                                and offers quite a large set of options. Thank you!</blockquote>
+                            <span class="d-block text-white-70">Sushant Poudel, Founder/CEO</span>
+                        </div>
+                        <!-- End Testimonials -->
+                    </div>
+
+                    <div class="js-slide">
+                        <!-- Testimonials -->
+                        <div class="w-md-80 w-lg-60 text-center mx-auto">
+                            <blockquote class="h3 text-white font-weight-normal mb-4">It's beautiful and the coding
+                                is done quickly and seamlessly. Keep it up!</blockquote>
+                            <span class="d-block text-white-70">Nitika Bhatta, CTO</span>
+                        </div>
+                        <!-- End Testimonials -->
+                    </div>
+
+                    <div class="js-slide">
+                        <!-- Testimonials -->
+                        <div class="w-md-80 w-lg-60 text-center mx-auto">
+                            <blockquote class="h3 text-white font-weight-normal mb-4">I love it! I love the ease
+                                of use, I love the fact that I have total creative freedom...</blockquote>
+                            <span class="d-block text-white-70">Divesh Thapa, MD</span>
+                        </div>
+                        <!-- End Testimonials -->
+                    </div>
                 </div>
+                <!-- End Testimonials Carousel Main -->
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                <!-- Testimonials Carousel Pagination -->
+                <div id="testimonialsNavPagination"
+                    class="js-slick-carousel slick slick-transform-off slick-pagination-modern mx-auto"
+                    data-hs-slick-carousel-options='{
+             "infinite": true,
+             "slidesToShow": 3,
+             "centerMode": true,
+             "isThumbs": true,
+             "asNavFor": "#testimonialsNavMain"
+           }'>
+                    <div class="js-slide">
+                        <div class="avatar avatar-circle mx-auto">
+                            <img class="avatar-img" src="/images/team/sushant.jpg" style="border-radius: 7%"
+                                alt="Sushant Poudel">
+                        </div>
+                    </div>
+
+                    <div class="js-slide">
+                        <div class="avatar avatar-circle mx-auto">
+                            <img class="avatar-img" src="/images/team/nitika.jpg" style="border-radius: 7%"
+                                alt="Nitika Bhatta">
+                        </div>
+                    </div>
+
+                    <div class="js-slide">
+                        <div class="avatar avatar-circle mx-auto">
+                            <img class="avatar-img" src="/images/team/divesh.jpg" style="border-radius: 7%"
+                                alt="Divesh Thapa">
+                        </div>
+                    </div>
+                </div>
+                <!-- End Testimonials Carousel Pagination -->
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-top-3 space-lg-0">
+                    <!-- Form -->
+                    <form method="POST" action="{{ route('login') }}" class="js-validate">
                         @csrf
+                        <!-- Title -->
+                        <div class="mb-5 mb-md-7">
+                            <h1 class="h2">Welcome back</h1>
+                            <p>Please use your Skillpark Inc. Login Credientials to Access the Messaging Service.</p>
+                        </div>
+                        <!-- End Title -->
 
-                        <div class="form-group row">
-                            <label for="email"
-                                class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                        <!-- Form Group -->
+                        <div class="js-form-message form-group">
+                            <label class="input-label" for="signinSrEmail">Email address</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            @error('email')
+                            <span class="invalid" style="color:red; font-size:14px" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" id="signinSrEmail" tabindex="1"
+                                placeholder="Email address" aria-label="Email address" required
+                                data-msg="Please enter a valid email address.">
+                        </div>
+                        <!-- End Form Group -->
 
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                        <!-- Form Group -->
+                        <div class="js-form-message form-group">
+                            <label class="input-label" for="signinSrPassword" tabindex="0">
+                                <span class="d-flex justify-content-between align-items-center">
+                                    Password
+                                    <a class="link-underline text-capitalize font-weight-normal"
+                                        href="http://skillpark.herokuapp.com/password/reset">Forgot Password?</a>
                                 </span>
-                                @enderror
+                            </label>
+
+                            @error('password')
+                            <span class="invalid" style="color:red; font-size:14px" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            <input type="password" class="form-control @error('email') is-invalid @enderror" name="password" id="signinSrPassword"
+                                tabindex="2" placeholder="********" aria-label="********" required
+                                data-msg="Your password is invalid. Please try again.">
+                        </div>
+                        <!-- End Form Group -->
+
+                        <!-- Button -->
+                        <div class="row align-items-center mb-5">
+                            <div class="col-sm-7 mb-3 mb-sm-0">
+                                <span class="font-size-1 text-muted">Log back <a class="font-size-1 font-weight-bold"
+                                        href="http://skillpark.herokuapp.com/login">here</a> for a freelacing
+                                    start.</span>
+
+                            </div>
+
+                            <div class="col-sm-5 text-sm-right">
+                                <button type="submit" class="btn btn-primary transition-3d-hover">Get Started</button>
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="current-password">
-
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                        {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                                @endif
-                            </div>
-                        </div>
+                        <!-- End Button -->
                     </form>
+                    <!-- End Form -->
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <!-- End Form -->
+</main>
+<!-- ========== END MAIN ========== -->
 @endsection
