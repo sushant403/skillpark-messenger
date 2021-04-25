@@ -32,8 +32,8 @@
                     <div class="js-slide">
                         <!-- Testimonials -->
                         <div class="w-md-80 w-lg-60 text-center mx-auto">
-                            <blockquote class="h3 text-white font-weight-normal mb-4">The template is really nice
-                                and offers quite a large set of options. Thank you!</blockquote>
+                            <blockquote class="h3 text-white font-weight-normal mb-4">Skillpark Messaging Service
+                                helps connect to the selected Freelancer securely.</blockquote>
                             <span class="d-block text-white-70">Sushant Poudel, Founder/CEO</span>
                         </div>
                         <!-- End Testimonials -->
@@ -42,8 +42,8 @@
                     <div class="js-slide">
                         <!-- Testimonials -->
                         <div class="w-md-80 w-lg-60 text-center mx-auto">
-                            <blockquote class="h3 text-white font-weight-normal mb-4">It's beautiful and the coding
-                                is done quickly and seamlessly. Keep it up!</blockquote>
+                            <blockquote class="h3 text-white font-weight-normal mb-4">Easy and Interactive User
+                                Interface with Real Time messaging service is a plus!</blockquote>
                             <span class="d-block text-white-70">Nitika Bhatta, CTO</span>
                         </div>
                         <!-- End Testimonials -->
@@ -52,8 +52,8 @@
                     <div class="js-slide">
                         <!-- Testimonials -->
                         <div class="w-md-80 w-lg-60 text-center mx-auto">
-                            <blockquote class="h3 text-white font-weight-normal mb-4">I love it! I love the ease
-                                of use, I love the fact that I have total creative freedom...</blockquote>
+                            <blockquote class="h3 text-white font-weight-normal mb-4">With added attachements features
+                                to submit the report and the work. Happy Freelancing!</blockquote>
                             <span class="d-block text-white-70">Divesh Thapa, MD</span>
                         </div>
                         <!-- End Testimonials -->
@@ -106,7 +106,7 @@
                         <!-- Title -->
                         <div class="mb-5 mb-md-7">
                             <h1 class="h2">Welcome back</h1>
-                            <p>Please use your Skillpark Inc. Login Credientials to Access the Messaging Service.</p>
+                            <p>Please use your Skillpark Inc. Login Credentials to Access the Messaging Service.</p>
                         </div>
                         <!-- End Title -->
 
@@ -119,9 +119,9 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" id="signinSrEmail" tabindex="1"
-                                placeholder="Email address" aria-label="Email address" required
-                                data-msg="Please enter a valid email address.">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                                value="{{ old('email') }}" id="signinSrEmail" tabindex="1" placeholder="Email address"
+                                aria-label="Email address" required data-msg="Please enter a valid email address.">
                         </div>
                         <!-- End Form Group -->
 
@@ -140,9 +140,9 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                            <input type="password" class="form-control @error('email') is-invalid @enderror" name="password" id="signinSrPassword"
-                                tabindex="2" placeholder="********" aria-label="********" required
-                                data-msg="Your password is invalid. Please try again.">
+                            <input type="password" class="form-control @error('email') is-invalid @enderror"
+                                name="password" id="signinSrPassword" tabindex="2" placeholder="********"
+                                aria-label="********" required data-msg="Your password is invalid. Please try again.">
                         </div>
                         <!-- End Form Group -->
 
@@ -156,7 +156,7 @@
                             </div>
 
                             <div class="col-sm-5 text-sm-right">
-                                <button type="submit" class="btn btn-primary transition-3d-hover">Get Started</button>
+                                <button type="submit" class="btn btn-primary transition-3d-hover">Get Started!</button>
                             </div>
                         </div>
                         <!-- End Button -->
