@@ -99,7 +99,7 @@ class SocialAuthController extends Controller
     protected function sendFailedResponse($msg = null)
     {
         return redirect()->route('social.login')
-            ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login. Or because the User Doesn\'t Exist. Only Skillpark Verified Users can Access.']);
+            ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login.']);
     }
 
     /**
@@ -125,7 +125,7 @@ class SocialAuthController extends Controller
             ]);
         } else {
             // error
-            return $this->sendFailedResponse();
+            return redirect()->back()->with('error', ' Error logging in because the User Doesn\'t Exist. Only Skillpark Verified Users can Access the Messaging Service.');
         }
 
         // login the user
