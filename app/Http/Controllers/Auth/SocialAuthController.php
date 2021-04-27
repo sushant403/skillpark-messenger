@@ -87,15 +87,7 @@ class SocialAuthController extends Controller
     {
         $user = User::find(Auth::user()->id);
 
-        if ($user->hasAnyRole(['freelancer', 'client'])) {
-
-            if ($user->hasRole('freelancer')) {
-                return redirect()->route('freelancer');
-            }
-            return redirect()->route('client');
-        } else {
-            return redirect()->route('addprofile');
-        }
+        return redirect()->route('home');
     }
 
     /**
@@ -107,7 +99,7 @@ class SocialAuthController extends Controller
     protected function sendFailedResponse($msg = null)
     {
         return redirect()->route('social.login')
-            ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login.']);
+            ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login. Or because the User Doesn\'t Exist. Only Skillpark Verified Users can Access.']);
     }
 
     /**
@@ -132,8 +124,8 @@ class SocialAuthController extends Controller
                 'access_token' => $providerUser->token
             ]);
         } else {
-            // create a new user
-            return redirect()->back()->with('error', 'No User Found. Please Register via Skillpark Inc.');
+            // error
+            return $this->sendFailedResponse();
         }
 
         // login the user
