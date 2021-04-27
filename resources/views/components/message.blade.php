@@ -19,16 +19,16 @@
 </div>
 @endif
 
-@if($errors->count() > 0)
+{{-- @if($errors->count() > 0)
 <div class="alert alert-danger alert-dismissible">
   <h4 class="alert-heading">Oh Oo!</h4>
   <ul class="list-unstyled">
     @foreach($errors->all() as $error)
     <li>{{ $error }}</li>
-    @endforeach
-  </ul>
-  <hr />
-  <p class="text-inherit mb-0">To register and Login to Skillpark, please follow this <a
-      href="https://skillpark.herokuapp.com">link</a></p>
+@endforeach
+</ul>
+<hr />
+<p class="text-inherit mb-0">To register and Login to Skillpark, please follow this <a
+    href="https://skillpark.herokuapp.com">link</a></p>
 </div>
-@endif
+@endif --}}

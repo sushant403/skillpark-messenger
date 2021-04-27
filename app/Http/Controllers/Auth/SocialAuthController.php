@@ -125,7 +125,7 @@ class SocialAuthController extends Controller
             ]);
         } else {
             // error
-            return redirect()->back()->with('error', ' Error logging in because the User Doesn\'t Exist. Only Skillpark Verified Users can Access the Messaging Service.');
+            return redirect()->route('login')->with('error', ' Error logging in because the User Doesn\'t Exist. Only Skillpark Verified Users can Access the Messaging Service.');
         }
 
         // login the user
