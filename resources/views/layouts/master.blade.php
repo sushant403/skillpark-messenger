@@ -4,22 +4,19 @@
 <head>
     <!-- Title -->
     <title>Skillpark Messaging Service | Skillpark Inc.</title>
-
-    <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.ico">
-
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="/vendor/font-awesome/css/all.min.css">
     <link rel="stylesheet" href="/css/vendor.min.css">
-
+    <link rel="stylesheet" href="/css/theme.css">
     <link rel="stylesheet" href="/css/theme.min.css">
     <style>
-        .avatar{
+        .avatar {
             width: 6.125rem;
             height: 6.125rem;
 

@@ -100,6 +100,7 @@
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-top-3 space-lg-0">
+                    @include('components.message')
                     <!-- Form -->
                     <form method="POST" action="{{ route('login') }}" class="js-validate">
                         @csrf
@@ -162,6 +163,17 @@
                         <!-- End Button -->
                     </form>
                     <!-- End Form -->
+                    <div class="border-top text-center mt-4 pt-4">
+                        <p class="font-size-sm font-weight-medium text-heading">Or sign in with</p><a
+                            class="social-btn sb-facebook sb-outline sb-lg mx-1 mb-2"
+                            href="{{ route('social.oauth', 'facebook') }}"><i class="fab fa-facebook"></i></a><a
+                            class="social-btn sb-twitter sb-outline sb-lg mx-1 mb-2"
+                            href="{{ route('social.oauth', 'twitter') }}"><i class="fab fa-twitter"></i></a><a
+                            class="social-btn sb-github sb-outline sb-lg mx-1 mb-2"
+                            href="{{ route('social.oauth', 'github') }}"><i class="fab fa-github"></i></a><a
+                            class="social-btn sb-google sb-outline sb-lg mx-1 mb-2"
+                            href="{{ route('social.oauth', 'google') }}"><i class="fab fa-google"></i></a>
+                    </div>
                 </div>
             </div>
         </div>

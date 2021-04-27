@@ -3,6 +3,15 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
+// Social Auth
+Route::get('auth/social', 'Auth\SocialAuthController@show')->name('social.login');
+Route::get('oauth/{driver}', 'Auth\SocialAuthController@redirectToProvider')->name('social.oauth');
+Route::get('login/{driver}/callback', 'Auth\SocialAuthController@handleProviderCallback')->name('social.callback');
+
+//creators of SKILLPARK (sushant,divesh,nitika)
+
+
 Auth::routes(['register' => false, 'reset' => false]);
 
 Route::get('/', function () {
