@@ -115,7 +115,7 @@ class SocialAuthController extends Controller
         $user = User::where('email', $providerUser->getEmail())->first();
 
         // if user already found
-        if ($user) {
+        if ($user && !$user->email_verified_at == NULL) {
             // update the avatar and provider that might have changed
             $user->update([
                 'avatar' => $providerUser->avatar,
@@ -125,7 +125,7 @@ class SocialAuthController extends Controller
             ]);
         } else {
             // error
-            return redirect()->route('login')->with('error', ' Error logging in because the User Doesn\'t Exist. Only Skillpark Verified Users can Access the Messaging Service.');
+            return redirect()->route('login')->with('error', ' Error logging in because the User Doesn\'t Exist or is Not Verified. Only Skillpark Verified Users can Access the Messaging Service.');
         }
 
         // login the user
