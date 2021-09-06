@@ -67,12 +67,10 @@
 @if($get == 'search_item')
 <table class="messenger-list-item" data-contact="{{ $user->id }}">
     <tr data-action="0">
-        {{-- Avatar side --}}
         <td>
             <div class="avatar av-m" style="background-image: url('{{ asset($user->avatar) }}');">
             </div>
         </td>
-        {{-- center side --}}
         <td>
             <p data-id="{{ $type.'_'.$user->id }}">
                 {{ strlen($user->name) > 20 ? trim(substr($user->name,0,20)).'..' : $user->name }}

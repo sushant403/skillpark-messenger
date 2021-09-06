@@ -17,7 +17,7 @@
 <div>
     <div class="message-card">
         <div class="image-file chat-image"
-            style="width: 250px; height: 150px;background-image: url('{{ asset('storage/'.config('chatify.attachments.folder').'/'.$attachment[0]) }}')">
+            style="width: 250px; height: 150px;background-image: url('{{ asset('uploads/public/'.config('chatify.attachments.folder').'/'.$attachment[0]) }}')">
         </div>
     </div>
 </div>
@@ -43,7 +43,7 @@
 <div>
     <div class="message-card mc-sender">
         <div class="image-file chat-image"
-            style="width: 250px; height: 150px;background-image: url('{{ asset('storage/'.config('chatify.attachments.folder').'/'.$attachment[0]) }}')">
+            style="width: 250px; height: 150px;background-image: url('{{ asset('uploads/public/'.config('chatify.attachments.folder').'/'.$attachment[0]) }}')">
         </div>
     </div>
 </div>
