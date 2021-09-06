@@ -14,7 +14,7 @@
                 </nav>
             </nav>
             {{-- Search input --}}
-            <input type="text" class="messenger-search" placeholder="Search" />
+           {{-- <input type="text" class="messenger-search" placeholder="Search" /> --}}
             {{-- Tabs --}}
             <div class="messenger-listView-tabs">
                 <a href="#" @if($route=='home' ) class="active-tab" @endif data-view="users">
